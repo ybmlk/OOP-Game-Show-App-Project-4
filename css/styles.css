@@ -131,14 +131,14 @@ button {
 }
 
 .chosen {
-  background: #3a3f58;
+  background: #05c46b;
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
 }
 
 .wrong {
-  background: #f7a964;
+  background: #ff3f34;
   color: #FFFFFF;
 }
 
