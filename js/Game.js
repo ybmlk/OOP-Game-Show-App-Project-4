@@ -82,10 +82,12 @@ class Game {
     gameOver(lost) {
         const overlay = document.querySelector('#overlay');
         const gameOverMessage = document.querySelector('#game-over-message');
+        const currentPhrase = document.querySelector('#active-phrase')
 
         // when all lifes have been used
         if (lost) {
             gameOverMessage.textContent = 'YOU LOST - TRY AGAIN!';
+            currentPhrase.textContent = `The Phrase Was: "${this.activePhrase.phrase}"`
             overlay.classList = 'lose';
 
         // when all letters of the phrase are revealed
@@ -120,5 +122,8 @@ class Game {
 
         // Resets the lost lives count
         this.missed = 0;
+
+        // Resets the active phrase message
+        document.querySelector('#active-phrase').textContent = '';
     }
 }
