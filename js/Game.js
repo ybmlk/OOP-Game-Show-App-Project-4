@@ -6,11 +6,11 @@ class Game {
     constructor() {
         this.missed = 0;
         this.phrases = [
-            { phrase: 'Keep it fun' },
-            { phrase: 'Go for it' },
-            { phrase: 'Now or never' },
-            { phrase: 'Never look back' },
-            { phrase: 'Change is good' }
+            { phrase: 'keep it fun' },
+            { phrase: 'go for it' },
+            { phrase: 'now or never' },
+            { phrase: 'never look back' },
+            { phrase: 'change is good' }
         ];
         this.activePhrase = null;
     }
@@ -19,23 +19,23 @@ class Game {
         document.getElementById('overlay').style.display = 'none';
 
         this.activePhrase = this.getRandomPhrase();
-        this.activePhrase.addPhraseToDisplay();
+        this.activePhrase.addPhraseToDisplay()
     }
 
     getRandomPhrase() {
-        const randIndex = Math.floor(Math.random() * this.phrases.length)
-        return phrases.map(phr => phr.phrase)[randIndex]
+        const randomIndex = Math.floor(Math.random() * this.phrases.length)
+        const randomPhrase = new Phrase(this.phrases[randomIndex].phrase);
+        return randomPhrase;
     }
 
     handleInteraction(button) {
-        button.display = true;
+        button.disabled = true;
 
         if (this.activePhrase.checkLetter(button.textContent)) {
-
             button.className = 'chosen';
             this.activePhrase.showMatchedLetter(button.textContent)
-        } else {
 
+        } else {
             button.className = 'wrong';
             this.removeLife();
         }
@@ -49,16 +49,16 @@ class Game {
     removeLife() {
 
         const heartImg = document.querySelectorAll('#scoreboard img');
+        const heartImgArray = Array.from(heartImg);
 
-        Array.from(heartImg).forEach(heart => {
+        for (let heart of heartImgArray) {
 
             if (heart.getAttribute('src') === 'images/liveHeart.png') {
-
                 this.missed += 1;
                 heart.src = 'images/lostHeart.png';
                 break;
             }
-        })
+        }
 
         if (this.missed === 5) {
             this.gameOver(true);
@@ -70,13 +70,13 @@ class Game {
 
         const phraseLI = document.querySelectorAll('#phrase li');
         const hiddenLI = Array.from(phraseLI).filter(li => li.classList.contains('hide'))
-        return hiddenLI === 0;
+        return hiddenLI.length === 0;
     }
 
     gameOver(lost) {
 
         const overlay = document.querySelector('#overlay');
-        const gameOverMessage = document.querySelector('##game-over-message');
+        const gameOverMessage = document.querySelector('#game-over-message');
 
         if (lost) {
             gameOverMessage.textContent = 'YOU LOST - TRY AGAIN!';
@@ -88,6 +88,8 @@ class Game {
         }
 
         overlay.style.display = 'block';
+
+        
     }
 
     resetGame() {
@@ -97,13 +99,12 @@ class Game {
         phraseDiv.appendChild(document.createElement('ul'));
 
         const keyboardButtons = document.querySelectorAll('#qwerty button');
+        const heartImg = document.querySelectorAll('#scoreboard img');
 
         Array.from(keyboardButtons).forEach(button => {
             button.disabled = false;
             button.className = 'key';
         });
-
-        const heartImg = document.querySelectorAll('#scoreboard img');
 
         Array.from(heartImg).forEach(heart => {
             heart.src = 'images/liveHeart.png';
