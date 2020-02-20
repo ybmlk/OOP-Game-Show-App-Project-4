@@ -28,6 +28,8 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+  background-image: url(../images/graph_paper.jpg);
+  background-attachment: fixed;
 }
 
 li,
@@ -60,6 +62,10 @@ button {
   -o-transition: var(--transition);
   transition: var(--transition);
   cursor: pointer;
+}
+
+button:hover {
+  background: lightseagreen;
 }
 
 #btn__reset {
@@ -134,10 +140,16 @@ button {
   font-size: var(--font-size-medium);
   color: #ffffff;
 }
+.chosen:hover {
+  background: #05c46b;
+}
 
 .wrong {
   background: #ff3f34;
   color: #ffffff;
+}
+.wrong:hover {
+  background: #ff3f34;
 }
 
 .btn__reset {
@@ -203,4 +215,19 @@ button {
 .hint-btn {
   margin: 0px;
   margin-bottom: -10px;
+}
+
+/* Difficulty buttons */
+.difficulty {
+  margin-bottom: 50px;
+}
+
+.active {
+  background: lightseagreen;
+  border: 2px solid;
+  border-color: var(--color-keys-light);
+}
+
+#select_diff {
+  display: none;
 }

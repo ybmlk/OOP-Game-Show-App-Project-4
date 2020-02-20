@@ -1,13 +1,7 @@
 class Game {
-  constructor() {
+  constructor(phrase) {
     this.missed = 0;
-    this.phrases = [
-      { phrase: 'keepitfun' },
-      { phrase: 'goforit' },
-      { phrase: 'nowornever' },
-      { phrase: 'neverlookback' },
-      { phrase: 'changeisgood' },
-    ];
+    this.phrases = phrase;
     this.activePhrase = null;
     this.hintCounter = 3;
   }
@@ -51,7 +45,6 @@ class Game {
       const randomButton = keyboardKeys.filter(key => key.innerText === randomletter)[0];
       this.handleInteraction(randomButton);
       this.hintCounter -= 1;
-      console.log(this.hintCounter);
       hintBtn.innerText = `(${this.hintCounter}) Hint`;
     }
   }
@@ -117,6 +110,7 @@ class Game {
       // when all letters of the phrase are revealed
     } else {
       gameOverMessage.textContent = 'YOU WON - CONGRATULATIONS!';
+      currentPhrase.textContent = `The Phrase Was: "${this.activePhrase.phrase}"`;
       overlay.classList = 'win';
     }
 

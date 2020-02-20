@@ -1,13 +1,63 @@
 // Global Declarations
-const game = new Game();
+let phrase, game;
 const startGameBtn = document.querySelector('#btn__reset');
+const easyBtn = document.querySelector('#btn__easy');
+const mediumBtn = document.querySelector('#btn__medium');
+const hardBtn = document.querySelector('#btn__hard');
 const keyboardDiv = document.querySelector('#qwerty');
 const hintBtn = document.querySelector('#hint-btn');
 
+// When called fetches words/phrases from the url and creates a new game object
+const fetchApi = url => {
+  fetch(url)
+    .then(data => data.json())
+    .then(data => (phrase = data.map(item => ({ phrase: item.word }))))
+    .then(data => (game = new Game(data)))
+    .catch(err => console.log(err));
+};
+
+// When easy button is clicked, it fetches 4 letter words
+easyBtn.addEventListener('click', () => {
+  // length of the words is between 3 - 4
+  const wordLength = Math.floor(Math.random() * 2) + 3;
+  const url = `http://api.datamuse.com/words?sp=${'?'.repeat(wordLength)}&max=100`;
+  fetchApi(url);
+  easyBtn.className = 'active';
+  mediumBtn.className = '';
+  hardBtn.className = '';
+});
+
+// When medium button is clicked, it fetches 7 letter words
+mediumBtn.addEventListener('click', () => {
+  // length of the words is between 5 - 7
+  const wordLength = Math.floor(Math.random() * 3) + 5;
+  const url = `http://api.datamuse.com/words?sp=${'?'.repeat(wordLength)}&max=100`;
+  fetchApi(url);
+  easyBtn.className = '';
+  mediumBtn.className = 'active';
+  hardBtn.className = '';
+});
+
+// When hard button is clicked, it fetches 12 letter words
+hardBtn.addEventListener('click', () => {
+  // length of the words is between 8 - 11
+  const wordLength = Math.floor(Math.random() * 4) + 8;
+  const url = `http://api.datamuse.com/words?sp=${'?'.repeat(wordLength)}&max=100`;
+  fetchApi(url);
+  easyBtn.className = '';
+  mediumBtn.className = '';
+  hardBtn.className = 'active';
+});
+
 // When clicked it resets  the game, and start a new one
 startGameBtn.addEventListener('click', () => {
-  game.resetGame();
-  game.startGame();
+  if (game) {
+    game.resetGame();
+    game.startGame();
+    document.getElementById('select_diff').style.display = 'none';
+  } else {
+    document.getElementById('select_diff').style.display = 'block';
+  }
 });
 
 // Listens to the clicked buttons and calles 'handleInteraction()'
