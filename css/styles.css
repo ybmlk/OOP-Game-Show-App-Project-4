@@ -5,15 +5,15 @@
 
 :root {
   --color-win: #20bf6b;
-  --color-lose: #D94545;
+  --color-lose: #d94545;
   --color-start: #5b85b7;
   --color-neutral: #445069;
-  --color-neutral-light: #D2D2D2;
-  --color-keys: #37474F;
-  --color-keys-light: #E5E5E5;
+  --color-neutral-light: #d2d2d2;
+  --color-keys: #37474f;
+  --color-keys-light: #e5e5e5;
   --font-size-large: 60px;
   --font-size-medium: 20px;
-  --transition: all .2s ease-in-out;
+  --transition: all 0.2s ease-in-out;
 }
 
 /* main */
@@ -30,7 +30,9 @@ body {
   height: 100vh;
 }
 
-li, ol, ul {
+li,
+ol,
+ul {
   padding: 0;
   display: inline-block;
 }
@@ -49,7 +51,7 @@ h1 {
 button {
   margin: 6px;
   border: 1px solid transparent;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   color: var(--color-keys);
   font-size: var(--font-size-medium);
   background-color: var(--color-keys-light);
@@ -61,8 +63,8 @@ button {
 }
 
 #btn__reset {
-	width: 200px;
-	margin: 0 auto;
+  width: 200px;
+  margin: 0 auto;
 }
 
 .main-container {
@@ -79,7 +81,7 @@ button {
   padding: 10px;
 }
 
-#phrase ul li{
+#phrase ul li {
   margin-top: 15px;
 }
 
@@ -88,7 +90,6 @@ button {
 .header {
   color: #3a3f58;
 }
-
 
 /* Phrase */
 
@@ -107,8 +108,6 @@ button {
   width: 15px;
 }
 
-
-
 .show {
   color: #fff;
   background-color: #4ac0d5;
@@ -118,10 +117,9 @@ button {
   padding: 20px 1px 0 1px;
   margin-right: 2px;
   border-radius: 5px;
-  -webkit-animation-duration: .5s;
-  animation-duration: .5s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
 }
-
 
 /* Keyboard */
 
@@ -134,12 +132,12 @@ button {
   background: #05c46b;
   border-radius: 5px;
   font-size: var(--font-size-medium);
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .wrong {
   background: #ff3f34;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .btn__reset {
@@ -149,8 +147,8 @@ button {
   border-radius: 5px;
   font-size: 20px;
   cursor: pointer;
-  border-bottom: solid 4px rgba(0, 0, 0, .3);
-  border-right: solid 3px rgba(0, 0, 0, .3)
+  border-bottom: solid 4px rgba(0, 0, 0, 0.3);
+  border-right: solid 3px rgba(0, 0, 0, 0.3);
 }
 
 .btn__reset:active {
@@ -159,14 +157,13 @@ button {
   border-right: solid 3px rgba(0, 0, 0, 0);
 }
 
-
 /* Overlay */
 
 #overlay {
   display: flex;
   flex-direction: column;
   position: fixed;
-  color: #FFFFFF;
+  color: #ffffff;
   justify-content: center;
   top: 0;
   bottom: 0;
@@ -176,7 +173,7 @@ button {
 }
 
 .title {
-  color: #FFF;
+  color: #fff;
 }
 
 .start {
@@ -201,4 +198,9 @@ button {
 
 .lose a {
   color: var(--color-lose);
+}
+
+.hint-btn {
+  margin: 0px;
+  margin-bottom: -10px;
 }
