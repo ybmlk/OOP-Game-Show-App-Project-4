@@ -1,23 +1,48 @@
-# OOP Game Show App
+# Wheel of Fortune
 
+### Table of Contents
 
-## Contributor
-
-> Yonatan Melka 
+- [Description](#Description)
+- [Technologies](#Technologies)
+- [How To Install](#How-To-Install)
+- [License](#License)
+- [Author](#Author)
 
 ## Description
 
-> The program selects a random phrase from a list and then displays boxes that represent each character in the phrase. Players can guess the hidden phrase by either clicking on the on-screen keyboard or typing on their keyboard.
+Built with vanilla JavaScript for word guessing game. The program fetches a random word from Datamuse API and then displays boxes that represent each character in the word. Players can guess the hidden word by either clicking on the on-screen keyboard or typing on their keyboard. Players will be given five chances to guess the right word. After 5 unsuccessful guesses players lose. Players can choose game difficult and can also request for a hint.
 
-> Players win if they figure out all the characters without making 5 incorrect guesses.
+---
 
-> After 5 unsuccessful guesses players lose.
+## Technologies
 
-> When players lose the hidden phrase will be revealed.
+- Javascript
+- HTML
+- CSS
 
-> Styling Changes:
-> * Color of winning background is changed to green
-> * Color of losing background is changed to red
-> * Color of start background is changed to purple
-> * Color of wrong key is changed to red
-> * Color of chosen key is changed to green
+## How To Install
+
+1. Download the project Files
+
+2. Open `index.html` in a browser
+
+
+## License
+
+The MIT License (MIT)
+
+Copyright (c) 2019 Tyler Harper
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+
+## Author
+
+Yonatan Melka
+
+email: [ybmelka2@gmail.com](mailto:ybmelka2@gmail.com)
