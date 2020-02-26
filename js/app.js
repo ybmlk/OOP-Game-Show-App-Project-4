@@ -20,7 +20,7 @@ const fetchApi = url => {
 easyBtn.addEventListener('click', () => {
   // length of the words is between 3 - 4
   const wordLength = Math.floor(Math.random() * 2) + 3;
-  const url = `http://api.datamuse.com/words?sp=${'?'.repeat(wordLength)}&max=100`;
+  const url = `https://api.datamuse.com/words?sp=${'?'.repeat(wordLength)}&max=100`;
   fetchApi(url);
   easyBtn.className = 'active';
   mediumBtn.className = '';
@@ -31,7 +31,7 @@ easyBtn.addEventListener('click', () => {
 mediumBtn.addEventListener('click', () => {
   // length of the words is between 5 - 7
   const wordLength = Math.floor(Math.random() * 3) + 5;
-  const url = `http://api.datamuse.com/words?sp=${'?'.repeat(wordLength)}&max=100`;
+  const url = `https://api.datamuse.com/words?sp=${'?'.repeat(wordLength)}&max=100`;
   fetchApi(url);
   easyBtn.className = '';
   mediumBtn.className = 'active';
@@ -42,7 +42,7 @@ mediumBtn.addEventListener('click', () => {
 hardBtn.addEventListener('click', () => {
   // length of the words is between 8 - 11
   const wordLength = Math.floor(Math.random() * 4) + 8;
-  const url = `http://api.datamuse.com/words?sp=${'?'.repeat(wordLength)}&max=100`;
+  const url = `https://api.datamuse.com/words?sp=${'?'.repeat(wordLength)}&max=100`;
   fetchApi(url);
   easyBtn.className = '';
   mediumBtn.className = '';
