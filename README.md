@@ -12,6 +12,8 @@
 
 Built with vanilla JavaScript for word guessing game. The program fetches a random word from Datamuse API and then displays boxes that represent each character in the word. Players can guess the hidden word by either clicking on the on-screen keyboard or typing on their keyboard. Players will be given five chances to guess the right word. After 5 unsuccessful guesses players lose. Players can choose game difficult and can also request for a hint.
 
+[Visit the website](https://wheel-of-forture.netlify.com/)
+
 ---
 
 ## Technologies
@@ -25,7 +27,6 @@ Built with vanilla JavaScript for word guessing game. The program fetches a rand
 1. Download the project Files
 
 2. Open `index.html` in a browser
-
 
 ## License
 
