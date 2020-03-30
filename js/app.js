@@ -1,3 +1,5 @@
+'use strict';
+
 // Global Declarations
 let phrase, game;
 const startGameBtn = document.querySelector('#btn__reset');

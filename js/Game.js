@@ -1,3 +1,5 @@
+'use strict';
+
 class Game {
   constructor(phrase) {
     this.missed = 0;
